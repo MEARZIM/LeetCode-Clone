@@ -2,26 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.split {
+    display: flex;
+    flex-direction: row;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.gutter {
+    background-color: #eee;
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.gutter:hover{
+    background-color: #282828;
 }
+
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+}
+
+.gutter.gutter-horizontal ::-webkit-scrollbar{
+	width: 5px;
+}
+
+.gutter.gutter-vertical {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+	cursor: row-resize;
+}
+
+::-webkit-scrollbar {
+	width: 0.5rem;
+	background-color: #282828;
+}
+
+::-webkit-scrollbar-track {
+	background: #282828;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #4d4d4d;
+}
+
+code {
+	border-radius: 5px;
+	border-width: 1px;
+	font-family: sans-serif;
+	font-size: 0.75rem;
+	font-weight: 500;
+	line-height: 1rem;
+	padding: 0.125rem;
+	letter-spacing: 1px;
+	white-space: pre-wrap;
+	background-color: hsla(0, 0%, 100%, 0.07);
+	border-color: rgba(247, 250, 255, 0.12);
+	color: rgba(239, 241, 246, 0.75);
+}
+
+
+.example-card pre {
+	background-color: hsla(0, 0%, 100%, 0.1);
+	border-radius: 0.5rem;
+	color: rgba(239, 241, 246, 0.75);
+	font-size: 0.98rem;
+	line-height: 1.25rem;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+	padding: 1rem;
+	white-space: pre-wrap;
+}
+
+.example-card pre strong {
+	color: white;
+	font-size: 1rem;
+}
+
+
+
+.cm-scroller {
+	background-color: #282828 !important;
+}
+.cm-focused {
+	outline: none !important;
+}
+
